@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "source" {
   provider      = aws.source
   force_destroy = var.force_destroy
-  bucket        = format("%s-%s-bucket-source", var.tags.id, var.tags.owner)
+  bucket        = format("%s-master-bucket-source", var.tags.id, var.tags.owner)
   # acl           = "private"
 }
 
@@ -20,11 +20,11 @@ resource "aws_s3_bucket_versioning" "versioning_source" {
   }
 }
 
-resource "aws_s3_object" "source" {
-  bucket = aws_s3_bucket_versioning.versioning_source.id
-  key    = "droeloe"
-  source = "notes.txt"
-}
+# resource "aws_s3_object" "source" {
+#   bucket = aws_s3_bucket_versioning.versioning_source.id
+#   key    = "droeloe"
+#   source = "notes.txt"
+# }
 
 
 
