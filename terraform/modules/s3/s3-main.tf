@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "source" {
   provider      = aws.source
   force_destroy = var.force_destroy
-  bucket        = format("%s-master-bucket-source", var.tags.id, var.tags.owner)
+  bucket        = format("%s-%s-master-bucket-source", var.tags.id, var.tags.owner)
   # acl           = "private"
 }
 

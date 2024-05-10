@@ -8,7 +8,7 @@ resource "aws_subnet" "audrey_public_subnet" {
 
   tags = merge(var.tags, {
     # Name                                        = format("%s-%s-${var.vpc_name}-public-subnet-${count.index + 1}", var.tags.id, var.tags.owner)
-    Name                                        = format("%s-%s-public-subnet-${count.index + 1}-${element(var.availability_zones, count.index)}", var.tags["id"], var.tags["Owner"])
+    Name                                        = format("%s-%s-public-subnet-${count.index + 1}-${element(var.availability_zones, count.index)}", var.tags.id, var.tags.owner)
     tier                                        = "public"
     "kubernetes.io/role/elb"                    = "1"
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
@@ -27,7 +27,7 @@ resource "aws_subnet" "audrey_private_subnet" {
 
   tags = merge(var.tags, {
     # Name                                        = format("%s-%s-${var.vpc_name}-private-subnet-${count.index + 1}", var.tags.id, var.tags.owner)
-    Name                                        = format("%s-%s-private-subnet-${count.index + 1}-${element(var.availability_zones, count.index)}", var.tags["id"], var.tags["Owner"])
+    Name                                        = format("%s-%s-private-subnet-${count.index + 1}-${element(var.availability_zones, count.index)}", var.tags.id, var.tags.owner)
     tier                                        = "private"
     "kubernetes.io/role/elb"                    = "1"
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"

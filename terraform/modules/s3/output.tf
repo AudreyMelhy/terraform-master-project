@@ -44,7 +44,3 @@ output "aws_s3_bucket_d" {
 
 # }
 
-# Output for DynamoDB table
-output "aws_dynamodb_table" {
-  value = aws_dynamodb_table.terraform_state_lock
-}

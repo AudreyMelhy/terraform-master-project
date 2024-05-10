@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "destination" {
   provider      = aws.destination
   force_destroy = var.force_destroy
-  bucket        = format("%s-master-bucket-destination", var.tags.id, var.tags.owner)
+  bucket        = format("%s-%s-master-bucket-destination", var.tags.id, var.tags.owner)
 }
 
 # resource "aws_s3_bucket_acl" "destination" {

@@ -6,7 +6,7 @@ account_id        = "763237209150"
 
 tags = {
   id      = "001"
-  owner   = "AudreyMelhy"
+  owner   = "audrey"
   project = ""
   phase   = "backend_module"
 }

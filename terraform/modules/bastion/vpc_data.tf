@@ -4,7 +4,7 @@ data "aws_vpc" "audrey_vpc" {
     values = ["001-AudreyMelhy-vpc"]
   }
   filter {
-    name   = "tag:Owner"
+    name   = "tag:owner"
     values = ["AudreyMelhy"]
   }
   filter {
@@ -16,10 +16,10 @@ data "aws_vpc" "audrey_vpc" {
 data "aws_subnet" "bastion_sub_pub" {
   filter {
     name   = "tag:Name"
-    values = ["001-AudreyMelhy-vpc-public-subnet-1-us-east-1a"]
+    values = ["001-AudreyMelhy-public-subnet-1-us-east-1a"]
   }
   filter {
-    name   = "tag:Owner"
+    name   = "tag:owner"
     values = ["AudreyMelhy"]
   }
   filter {

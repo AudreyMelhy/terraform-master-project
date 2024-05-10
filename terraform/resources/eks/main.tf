@@ -14,7 +14,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "001-s5audrey-bucket-source"
+    bucket = "001-audrey-master-bucket-source"
     # dynamodb_table = "AudreyM-tfstate-locking"
     key    = "eks/terraform.tfstate"
     region = "us-east-1"

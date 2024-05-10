@@ -14,7 +14,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "001-s5audrey-bucket-source"
+    bucket = "001-audrey-master-bucket-source"
     # dynamodb_table = "AudreyM-tfstate-locking"
     key    = "bastion/terraform.tfstate"
     region = "us-east-1"
@@ -23,7 +23,7 @@ terraform {
 
 locals {
   region                        = "us-east-1"
-  ec2_ami                       = ""
+  ec2_ami                       = "ami-04b70fa74e45c3917"
   ec2_instance_name             = "bastion-001-audrey"
   ec2_instance_type             = "t2.medium"
   ec2_key_name                  = "terraform-aws"
@@ -45,17 +45,17 @@ locals {
 }
 
 module "bastion_host" {
-  source     = "../../modules/bastion"
-  aws_region = local.region
-  # ami = local.ec2_ami
-  # instance_name = local.ec2_instance_name
-  instance_type = local.ec2_instance_type
-  key           = local.ec2_key_name
-  tenancy       = local.tenancy
-  # sec_grp = local.sec_grp
+  source          = "../../modules/bastion"
+  aws_region      = local.region
+  instance_ami    = local.ec2_ami
+  instance_name   = local.ec2_instance_name
+  instance_type   = local.ec2_instance_type
+  key             = local.ec2_key_name
+  tenancy         = local.tenancy
+  sg_name         = local.sec_grp
   volume_size     = local.root_volume_size
   api_termination = local.enable_termination_protection
-  # allowed_ports = local.allowed_ports
-  pub_ip = local.pub_ip
-  tags   = local.tags
+  allowed_ports   = local.allowed_ports
+  pub_ip          = local.pub_ip
+  tags            = local.tags
 }

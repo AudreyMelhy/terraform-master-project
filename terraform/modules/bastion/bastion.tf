@@ -18,7 +18,7 @@ resource "aws_instance" "audrey_bastion" {
   }
 
   tags = merge(var.tags, {
-    Name = format("bastion-%s-audrey", var.tags["id"])
+    Name = format("bastion-%s-audrey", var.tags.id)
   })
 
 }
