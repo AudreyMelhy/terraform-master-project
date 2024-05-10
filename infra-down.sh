@@ -39,3 +39,24 @@ terraform destroy --auto-approve
 cd -
 
 
+
+echo "*****************************************************************"
+echo "Deleting the SEC-GRP module"
+echo "*****************************************************************"
+cd terraform/resources/sec-grp
+terraform init
+terraform fmt
+terraform destroy --auto-approve
+cd -
+
+
+
+echo "*****************************************************************"
+echo "Deleting the VPC module"
+echo "*****************************************************************"
+sleep 3
+cd terraform/resources/vpc
+terraform init
+terraform destroy --auto-approve
+cd -
+
