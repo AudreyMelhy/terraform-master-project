@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bastion_host","Source":"../../modules/bastion","Dir":"../../modules/bastion"}]}
+{"Modules":[{"Key":"bastion_host","Source":"../../modules/bastion","Dir":"../../modules/bastion"},{"Key":"","Source":"","Dir":"."}]}

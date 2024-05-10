@@ -1,5 +1,5 @@
 resource "aws_eks_node_group" "green-nodes" {
-  cluster_name    = format("%s-%s-cluster", var.tags.id, var.tags.environment)
+  cluster_name    = format("%s-audrey-cluster", var.tags.id)
   node_group_name = format("%s-%s-green-node-group", var.tags.id, var.tags.environment)
   node_role_arn   = aws_iam_role.nodes.arn
 
@@ -40,7 +40,7 @@ resource "aws_eks_node_group" "green-nodes" {
 }
 
 resource "aws_eks_node_group" "blue-nodes" {
-  cluster_name    = format("%s-%s-cluster", var.tags.id, var.tags.environment)
+  cluster_name    = format("%s-audrey-cluster", var.tags.id)
   node_group_name = format("%s-%s-blue-node-group", var.tags.id, var.tags.environment)
   node_role_arn   = aws_iam_role.nodes.arn
 

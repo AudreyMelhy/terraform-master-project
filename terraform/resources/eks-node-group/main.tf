@@ -14,22 +14,22 @@ terraform {
 
 terraform {
   backend "s3" {
-    bucket         = "001-audrey-master-bucket-source"
+    bucket = "001-audrey-master-bucket-source"
     # dynamodb_table = ""
-    key            = "eks-node-group/terraform.tfstate"
-    region         = "us-east-1"
+    key    = "eks-node-group/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
 locals {
-  aws_region              = "us-east-1"
+  aws_region         = "us-east-1"
   control_plane_name = "audrey-control-plane"
 
 
-  cluster_version             = "1.28"
-  node_min     = "1"
-  desired_node = "1"
-  node_max     = "1"
+  cluster_version = "1.28"
+  node_min        = "1"
+  desired_node    = "1"
+  node_max        = "1"
 
   blue_node_color  = "blue"
   green_node_color = "green"
@@ -59,10 +59,10 @@ locals {
 }
 
 module "eks-node-group" {
-  source                  = "../../modules/eks-node-group"
-  aws_region              = local.aws_region
+  source                    = "../../modules/eks-node-group"
+  aws_region                = local.aws_region
   control_plane_name        = local.control_plane_name
-  cluster_version             = local.cluster_version
+  cluster_version           = local.cluster_version
   node_min                  = local.node_min
   desired_node              = local.desired_node
   node_max                  = local.node_max
@@ -78,5 +78,5 @@ module "eks-node-group" {
   disk_size                 = local.disk_size
   shared_owned              = local.shared_owned
   enable_cluster_autoscaler = local.enable_cluster_autoscaler
-  tags                    = local.tags
+  tags                      = local.tags
 }

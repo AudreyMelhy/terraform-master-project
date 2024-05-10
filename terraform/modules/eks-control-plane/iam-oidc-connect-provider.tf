@@ -1,4 +1,4 @@
-data "tls_certificate" "audrey" {
+#data "tls_certificate" "audrey" {
 #   url = aws_eks_cluster.audrey_cluster.identity.0.oidc.0.issuer
 # }
 # resource "aws_iam_openid_connect_provider" "example" {

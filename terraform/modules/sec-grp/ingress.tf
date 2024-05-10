@@ -18,6 +18,7 @@ resource "aws_security_group_rule" "bastion_inbound" {
   security_group_id = aws_security_group.bastion_sg.id
 }
 
+
 # resource "aws_security_group_rule" "lb_inbound" {
 #   for_each          = { for pt, port in var.ports : pt => port }
 #   type              = "ingress"
@@ -26,7 +27,8 @@ resource "aws_security_group_rule" "bastion_inbound" {
 #   protocol          = "tcp"
 #   cidr_blocks       = ["0.0.0.0/0"]
 #   security_group_id = aws_security_group.lb_sg.id
-# }
+#}
+
 
 resource "aws_security_group_rule" "web_ping" {
   type              = "ingress"
