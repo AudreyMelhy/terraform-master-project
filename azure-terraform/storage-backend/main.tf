@@ -20,7 +20,7 @@ resource "azurerm_storage_account" "sa2" {
 }
 
 resource "azurerm_storage_container" "container2" {
-  name                  = "tfstate-container-${random_string.rs.result}"
+  name                  = "container-${random_string.rs.result}"
   storage_account_name  = azurerm_storage_account.sa2.name
   container_access_type = "private"
 }
