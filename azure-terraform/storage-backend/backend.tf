@@ -1,8 +1,8 @@
 terraform {
-  backend "s3" {
-    bucket         = "001-audrey-master-bucket-source"
-    key            = "azure-terraform/rg/terraform.tfstate"
-    region         = "us-east-1"
-   # dynamodb_table = ""
+  backend "azurerm" {
+    resource_group_name  = "tfstate-backend-rg"
+    storage_account_name = "tfstate6bndan"
+    container_name       = "tfstate-container6bndan"
+    key                  = "rg-terraform.tfstate"
   }
 }

@@ -1,10 +1,10 @@
 #provider "azurerm" {
- # features {}
+# features {}
 #}
 
-resource "azurerm_resource_group" "example" {
-  name     = "Audrey-rg2"
+resource "azurerm_resource_group" "backend" {
+  name     = "tfstate-backend-rg"
   location = var.location
-  tags = var.tags
+  tags     = var.tags
 }
 
